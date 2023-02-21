@@ -14,7 +14,7 @@ function calculate() {
     const arr_total = [];
     const arr_required = [];
 
-    var count, uplift, temp, total = 0, base = 300;
+    var count, uplift, temp, left, total = 0, base = 300;
 
     const arr_value = [0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 1];
 
@@ -36,8 +36,9 @@ function calculate() {
     for (let i = arr_count.length - 2; i >= 0; i--) {
 
         count = 0;
+        left = arr_count[i];
 
-        while (temp >= arr_value[i]) {
+        while (temp >= arr_value[i] && left > 0) {
             temp = temp - arr_value[i];
             temp = temp.toFixed(2);
             count++;
