@@ -42,6 +42,7 @@ function calculate() {
             temp = temp - arr_value[i];
             temp = temp.toFixed(2);
             count++;
+            left--;
         }
         arr_required.push(count);
     }
